@@ -10,8 +10,14 @@ class Node<T> {
   
   class Source {
     public static <T> boolean linkedListFind(Node<T> head, T target) {
-      // todo
-      return false;
+      boolean present = false;
+      while(head!=null){
+
+          if(head.val == target)
+              present = true;
+          head = head.next;
+      }
+      return present;
     }
     
     public static void main(String[] args) {
