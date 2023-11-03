@@ -12,12 +12,22 @@ class Node<T> {
     public static <T> boolean linkedListFind(Node<T> head, T target) {
       boolean present = false;
       while(head!=null){
-
           if(head.val == target)
               present = true;
           head = head.next;
       }
       return present;
+    }
+
+    public static <T> T getNodeValue(Node<T> head, int index) {
+      // todo - note the return type, but don't overthink it
+      int count = 0;
+      while (head!=null) {
+        if(count == index)
+          return head.val;
+        count++;
+      }
+      return head.val;
     }
     
     public static void main(String[] args) {
@@ -33,6 +43,22 @@ class Node<T> {
         // a -> b -> c -> d
 
         System.out.println(Source.linkedListFind(a, "c"));
+
+
+
+
+
+
+        Node<String> node1 = new Node<>("banana");
+        Node<String> node2 = new Node<>("mango");
+        Node<String> node3 = new Node<>("kiwi");
+    
+        node1.next = node2;
+        node2.next = node3;
+    
+        // banana -> mango -> kiwi
+    
+        System.out.println(Source.getNodeValue(node1, 1));
         
     }
 
